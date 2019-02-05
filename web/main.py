@@ -62,6 +62,7 @@ def dbUserId_delete(userId):
 	user = [ u for u in db if u['id'] == userId ]
 	if len(user) == 0:
 		abort(404)
+	
 	db.remove(user[0])
 	return jsonify({'response':'Success'})
 
